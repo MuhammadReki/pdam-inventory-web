@@ -54,10 +54,10 @@ Route::post('/locale', function (\Illuminate\Http\Request $request) {
 
 // ============================================================
 // ===== SEMUA ROUTE YANG BUTUH LOGIN + ROLE =====
-// ===== ADMIN & STAFF AJA =====
+// ===== SUPERADMIN, ADMIN & STAFF =====
 // ============================================================
 
-Route::middleware(['auth', 'verified', 'role:admin,staff'])->group(function () {
+Route::middleware(['auth', 'verified', 'role:superadmin,admin,staff'])->group(function () {
 
     // ========================================================
     // DASHBOARD
