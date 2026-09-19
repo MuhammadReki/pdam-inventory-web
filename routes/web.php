@@ -27,19 +27,6 @@ Route::get('/sso/verify', [SsoController::class, 'verify'])
     ->name('sso.verify');
 
 // ============================================================
-// ===== LOGOUT (GET) =====
-// ============================================================
-
-Route::get('/logout', function () {
-    Auth::logout();
-
-    request()->session()->invalidate();
-    request()->session()->regenerateToken();
-
-    return redirect()->route('login');
-})->name('logout');
-
-// ============================================================
 // ===== HALAMAN UTAMA =====
 // ============================================================
 
